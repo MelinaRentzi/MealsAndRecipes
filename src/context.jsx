@@ -4,7 +4,7 @@ const AppContext = React.createContext();
 
 const AppProvider = ({ children }) => {
   return (
-    <AppContext.Provider value={{ name: "john", role: "student" }}>
+    <AppContext.Provider value={{ name: "melina", role: "student" }}>
       {children}
     </AppContext.Provider>
   );
