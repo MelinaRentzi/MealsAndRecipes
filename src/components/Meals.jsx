@@ -1,7 +1,25 @@
 import { useGlobalContext } from "../context";
+import { FaRegHeart } from "react-icons/fa";
 
 const Meals = () => {
-  const { meals } = useGlobalContext();
+  const { loading, meals } = useGlobalContext();
+
+  if (loading) {
+    return (
+      <section className="section">
+        <h4>Loading...</h4>
+      </section>
+    );
+  }
+
+  if (meals.length < 1) {
+    return (
+      <section className="section">
+        <h4>No meals matched your search term. Please try again.</h4>
+      </section>
+    );
+  }
+
   return (
     <section className="section-center">
       {meals.map((singleMeal) => {
@@ -11,7 +29,9 @@ const Meals = () => {
             <img src={image} className="img" />
             <footer>
               <h5>{title}</h5>
-              <button className="like-btn">click me</button>
+              <button className="like-btn">
+                <FaRegHeart />
+              </button>
             </footer>
           </article>
         );
