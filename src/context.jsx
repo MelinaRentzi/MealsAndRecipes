@@ -3,7 +3,7 @@ import axios from "axios";
 
 const AppContext = React.createContext();
 
-const allMealsURL = "https://www.themealdb.com/api/json/v1/1/search.php?s=aaaa";
+const allMealsURL = "https://www.themealdb.com/api/json/v1/1/search.php?s=a";
 const randomMealURL = "https://www.themealdb.com/api/json/v1/1/random.php";
 
 const AppProvider = ({ children }) => {
