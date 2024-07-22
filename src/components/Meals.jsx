@@ -2,7 +2,7 @@ import { useGlobalContext } from "../context";
 import { FaRegHeart } from "react-icons/fa";
 
 const Meals = () => {
-  const { loading, meals, selectMeal } = useGlobalContext();
+  const { loading, meals, selectMeal, addToFavorites } = useGlobalContext();
 
   if (loading) {
     return (
@@ -34,7 +34,10 @@ const Meals = () => {
             />
             <footer>
               <h5>{title}</h5>
-              <button className="like-btn">
+              <button
+                className="like-btn"
+                onClick={() => addToFavorites(idMeal)}
+              >
                 <FaRegHeart />
               </button>
             </footer>
