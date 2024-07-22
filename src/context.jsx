@@ -33,9 +33,13 @@ const AppProvider = ({ children }) => {
     fetchMeals(randomMealUrl);
   };
 
-  const selectMeal = (idMeal, favoriteMeals) => {
+  const selectMeal = (idMeal, favoriteMeal) => {
     let meal;
-    meal = meals.find((meal) => meal.idMeal === idMeal);
+    if (favoriteMeal) {
+      meal = favorites.find((meal) => meal.idMeal === idMeal);
+    } else {
+      meal = meals.find((meal) => meal.idMeal === idMeal);
+    }
     setSelectedMeal(meal);
     setShowModal(true);
   };
